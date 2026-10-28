@@ -1,0 +1,71 @@
+{
+  "schema": "guardrail-media-v1",
+  "source_version": "0.1.0",
+  "cast_sha256": "941b86bd40abe19089921aa4188e99ff4277d62308899e94d454afb2e39e21fe",
+  "cast_events": 8,
+  "showcase_script_sha256": "b5f659f4732598718b2eeed2b2950c5040f5a060bad0bbd4e0ed026fb3a66216",
+  "renderer_script_sha256": "47a56adbefeaea8d81991f3692958becd7dc4eb5487de35d6de441df7d5a6758",
+  "raw_results_sha256": "a9911a7504fd42e078620c23a0372f79cc7c0648c8aeb37be82a1eab494746b5",
+  "rendering": "Complete recorded stdout; CRLF -> LF and visual wrapping only. Costs section is explicitly labelled actual public Python API output; other sections are installed CLI calls.",
+  "gif": {
+    "cases": [
+      "simulation",
+      "costs",
+      "receipt",
+      "tamper"
+    ],
+    "frame_holds_ms": [
+      3200,
+      4200,
+      3000,
+      3600
+    ],
+    "timing": "readability holds, not original execution timing"
+  },
+  "social_preview": "Original native schematic, not runtime screenshot",
+  "html_capture": "feature-report.png is a browser viewport of actual synthetic-report.html; complete HTML retained",
+  "assets": {
+    "demo.gif": {
+      "width": 1280,
+      "height": 900,
+      "frames": 4,
+      "sha256": "3eb69b2fe3af3cde9d38ee1aea9f6a5ea946c18e2773d0e4eeddbcfb6bc7f8a4"
+    },
+    "feature-costs.png": {
+      "width": 1280,
+      "height": 589,
+      "frames": 1,
+      "sha256": "bdc686d43e25f5bde94112aea96025df6ef4c3099361b22e3cc96542b739cf68"
+    },
+    "feature-receipt.png": {
+      "width": 1280,
+      "height": 440,
+      "frames": 1,
+      "sha256": "93603c62383727ec9c9c35250258b61d362d08f683205e2b36f4a9563750370d"
+    },
+    "feature-report.png": {
+      "width": 1200,
+      "height": 980,
+      "frames": 1,
+      "sha256": "5bd7019f9cd8ff2f87ff4469b83bff5d08d6e12222bf7eccfb4a26caee4d3c23"
+    },
+    "feature-simulation.png": {
+      "width": 1280,
+      "height": 454,
+      "frames": 1,
+      "sha256": "23f632843ff95df5d49c7bab914394dbdb057abafb18182f23163883f46b441c"
+    },
+    "feature-tamper.png": {
+      "width": 1280,
+      "height": 440,
+      "frames": 1,
+      "sha256": "52aad8b8169ad51858665ab77955ba10d9c7bc7d0af047f953b4baaced2af2a9"
+    },
+    "social-preview.png": {
+      "width": 1280,
+      "height": 640,
+      "frames": 1,
+      "sha256": "de2a42aa38b5fb973986672fc6260ef79191d02342c4b8c9c24e9fbc9bc7e6ce"
+    }
+  }
+}

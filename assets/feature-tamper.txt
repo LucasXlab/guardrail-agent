@@ -1,0 +1,5 @@
+$ guardrail-agent --verify truncated.json --receipt receipt.json
+{"ok": false, "index": 24, "reason": "record count mismatch", "anchored": true}
+[exit 1; expected 1]
+Trusted receipt must be kept independently; rewriting both files is not authenticated.
+No real orders, live market, model, financial return claim or network call.

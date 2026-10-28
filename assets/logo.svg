@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96" role="img" aria-labelledby="title desc">
+  <title id="title">guardrail-agent</title>
+  <desc id="desc">Two gate rails and a proposal path. An illustrative mark, not an authentication seal.</desc>
+  <rect width="96" height="96" rx="22" fill="#10151e"/>
+  <path d="M29 24v48M67 24v48" stroke="#63d9b1" stroke-width="6" stroke-linecap="round"/>
+  <path d="M13 48h40m-8-8 8 8-8 8" fill="none" stroke="#efc382" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="81" cy="48" r="4" fill="#edf3ee"/>
+</svg>

@@ -1,0 +1,15 @@
+$ python scripts/showcase.py --costs
+Actual public Python API results; synthetic single-threaded execution only.
+proposal: {"symbol": "AAPL", "side": "BUY", "qty": 10}
+reference_and_market_price: 100.0
+gate_approved: true
+slippage_rate: 0.0005
+fee_rate: 0.0003
+execution_quote: {"fill": 100.05, "notional": 1000.5, "fee": 0.30015}
+actual_fill: 100.05
+cash_before: 5000.0
+cash_after: 3999.19985
+oversize_gate_approved: false
+rejected_execution: "execution requires an approved, gate-issued decision"
+rejection_preserved_portfolio: true
+[exit 0; expected 0]

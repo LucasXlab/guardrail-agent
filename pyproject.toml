@@ -1,0 +1,50 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "_build_backend"
+backend-path = ["."]
+
+[project]
+name = "guardrail-agent"
+dynamic = ["version"]
+description = "An offline simulator for proposal gates, constrained execution, and audit receipts."
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{name = "guardrail-agent contributors"}]
+dependencies = []
+keywords = ["simulation", "guardrails", "audit", "deterministic", "cli"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10", "pytest-cov>=5,<8", "ruff>=0.9,<0.18", "build>=1.2,<2", "setuptools>=77", "wheel>=0.43,<1"]
+
+[project.scripts]
+guardrail-agent = "guardrail_agent.cli:run_cli"
+
+[project.urls]
+Repository = "https://github.com/LucasXlab/guardrail-agent"
+
+[tool.setuptools.packages.find]
+include = ["guardrail_agent*"]
+
+[tool.setuptools.dynamic]
+version = {attr = "guardrail_agent.version.__version__"}
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+
+[tool.coverage.run]
+source = ["guardrail_agent"]
+
+[tool.coverage.report]
+show_missing = true
+fail_under = 70
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I"]
+

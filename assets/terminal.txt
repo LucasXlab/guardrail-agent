@@ -1,0 +1,36 @@
+=== CASE: simulation ===
+$ guardrail-agent --days 12 --seed 7 --agent chaotic --json audit.json --receipt-out receipt.json --html report.html --tamper-demo
+Synthetic simulation · 收盘报告
+Equity: 99,986.74 | Cash: 94,547.06 | Drawdown: 0.09%
+Proposals: 25 | Accepted: 1 | 裁决驳回: 24
+Equity path: ▂▂▂▂▂▂▂▁▂█▂▁
+审计链: 完好 (in-memory receipt)
+Synthetic prices only. This is not investment research or a real trading safety system.
+Tamper demo: detected=True; index=0; record hash mismatch
+[exit 0; expected 0]
+=== CASE: costs ===
+$ python scripts/showcase.py --costs
+Actual public Python API results; synthetic single-threaded execution only.
+proposal: {"symbol": "AAPL", "side": "BUY", "qty": 10}
+reference_and_market_price: 100.0
+gate_approved: true
+slippage_rate: 0.0005
+fee_rate: 0.0003
+execution_quote: {"fill": 100.05, "notional": 1000.5, "fee": 0.30015}
+actual_fill: 100.05
+cash_before: 5000.0
+cash_after: 3999.19985
+oversize_gate_approved: false
+rejected_execution: "execution requires an approved, gate-issued decision"
+rejection_preserved_portfolio: true
+[exit 0; expected 0]
+=== CASE: receipt ===
+$ guardrail-agent --verify audit.json --receipt receipt.json
+{"ok": true, "index": null, "reason": "matches trusted receipt", "anchored": true}
+[exit 0; expected 0]
+=== CASE: tamper ===
+$ guardrail-agent --verify truncated.json --receipt receipt.json
+{"ok": false, "index": 24, "reason": "record count mismatch", "anchored": true}
+[exit 1; expected 1]
+Trusted receipt must be kept independently; rewriting both files is not authenticated.
+No real orders, live market, model, financial return claim or network call.

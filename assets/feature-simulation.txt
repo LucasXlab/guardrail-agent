@@ -1,0 +1,9 @@
+$ guardrail-agent --days 12 --seed 7 --agent chaotic --json audit.json --receipt-out receipt.json --html report.html --tamper-demo
+Synthetic simulation · 收盘报告
+Equity: 99,986.74 | Cash: 94,547.06 | Drawdown: 0.09%
+Proposals: 25 | Accepted: 1 | 裁决驳回: 24
+Equity path: ▂▂▂▂▂▂▂▁▂█▂▁
+审计链: 完好 (in-memory receipt)
+Synthetic prices only. This is not investment research or a real trading safety system.
+Tamper demo: detected=True; index=0; record hash mismatch
+[exit 0; expected 0]

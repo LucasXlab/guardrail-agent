@@ -1,0 +1,3 @@
+$ guardrail-agent --verify audit.json --receipt receipt.json
+{"ok": true, "index": null, "reason": "matches trusted receipt", "anchored": true}
+[exit 0; expected 0]
