@@ -3,13 +3,6 @@
 <p align="center"><img src="../assets/logo.svg" width="80" height="80" alt="guardrail-agent logo"></p>
 <h1 align="center">guardrail-agent</h1>
 <p align="center"><strong>See a proposal checked, executed, and checked again.</strong></p>
-<p align="center">
-  <img src="../assets/badge-ci.svg" alt="CI prepared; no remote success claimed">
-  <img src="../assets/badge-license.svg" alt="MIT license">
-  <img src="../assets/badge-version.svg" alt="Source v0.1.0, not a registry release">
-  <img src="../assets/badge-python.svg" alt="Python 3.11 or later">
-  <img src="../assets/badge-stars.svg" alt="Stars pending">
-</p>
 
 An offline teaching simulator for deterministic proposal gates. A proposer suggests an order, rules evaluate it, a state-bound simulated executor rechecks it, and a hash chain records the decision. All market data is seeded and synthetic.
 

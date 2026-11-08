@@ -18,11 +18,28 @@
 
 需要 macOS / Linux 与 Python 3.11+。演示先验证完整审计，再删去记录并核对预期拒绝；不连接券商或真实市场。
 
+克隆已发布源码，在独立环境中安装：
+
 ```bash
+git clone --branch noah/guardrail-agent https://github.com/LucasXlab/guardrail-agent.git
+cd guardrail-agent
 python3 -m venv .venv
-.venv/bin/python -m pip install .
-.venv/bin/python scripts/demo.py
+. .venv/bin/activate
+python -m pip install .
+python scripts/demo.py
 ```
+
+适合教学与原型讨论：观察“提案被批准”和“实际执行”之间为什么还需要复检。演示会创建合成记录、验证完整记录，再检查删除一条记录后会被拒绝。要得到可打开的独立报告：
+
+```bash
+mkdir synthetic-run
+guardrail-agent --days 30 --seed 7 --agent chaotic \
+  --json synthetic-run/audit.json --html synthetic-run/report.html \
+  --receipt-out synthetic-run/receipt.json
+guardrail-agent --verify synthetic-run/audit.json --receipt synthetic-run/receipt.json
+```
+
+打开 `synthetic-run/report.html`，对照 JSON 查看获批和被拒的提案。验证应返回 `ok: true`。复现时固定 seed、提案器和天数；每次用新输出目录，模拟导出可能覆盖已有普通文件。要检测后续改动，须先把回执副本保存到独立可信位置。CLI 与 HTML 报告目前使用英文；本项目定位是教学模拟器。
 
 ## 实际使用
 
@@ -34,7 +51,7 @@ guardrail-agent --days 30 --json audit.json --html report.html --receipt-out rec
 guardrail-agent --verify audit.json --receipt receipt.json
 ```
 
-先激活 `.venv`。`momentum` 与 `chaotic` 是示范提议方。使用私有输出目录；JSON 导出和验证输入上限为 20 MB。
+`momentum` 与 `chaotic` 是示范提议方。使用私有输出目录；JSON 导出和验证输入上限为 20 MB。
 
 收据需要独立保管。若审计与参照可被同时改写，哈希链无法证明真实性。退出 `0` 表示操作完成，`1` 表示验证失败，`2` 表示输入或 I/O 错误。
 

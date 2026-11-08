@@ -3,13 +3,6 @@
 <p align="center"><img src="../assets/logo.svg" width="80" height="80" alt="guardrail-agent 标识"></p>
 <h1 align="center">guardrail-agent</h1>
 <p align="center"><strong>看一个提议如何被检查、执行，再次核对。</strong></p>
-<p align="center">
-  <img src="../assets/badge-ci.svg" alt="CI 已准备，未声称远端通过">
-  <img src="../assets/badge-license.svg" alt="MIT 许可">
-  <img src="../assets/badge-version.svg" alt="源码 v0.1.0，非注册表发行">
-  <img src="../assets/badge-python.svg" alt="Python 3.11 或以上">
-  <img src="../assets/badge-stars.svg" alt="Star 状态待发布">
-</p>
 
 用于理解确定性提议门禁的离线教学模拟器：提议方提出意向，规则评估，绑定状态的模拟执行器再次核对，哈希链记录裁决。所有行情均由固定种子生成。
 
@@ -135,7 +128,7 @@ flowchart TD
 ## 开发与局限
 
 `make dev`建立开发环境，`make check`执行lint、格式、全套测试/70%包覆盖门槛和构建，`make demo`运行合成演示。
-CI准备了Python 3.11/3.13矩阵，未声称远端已执行。原可选模型适配器已移除，`--llm`及`--agent llm`不再支持。
+CI配置了Python 3.11/3.13矩阵，当前结果请查看仓库Actions。原可选模型适配器已移除，`--llm`及`--agent llm`不再支持。
 
 不读取`.env`，无需密钥；导出物包含调用者提供的提案和配置，分享前应检查。
 输入JSON以POSIX不跟随链接方式读取，输出拒绝符号链接目标，先准备文件再逐个原子替换。
